@@ -1,0 +1,97 @@
+.wrapper{
+  display: flex;
+}
+
+.side-bar{
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-header{
+  background-color: #253141;
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name a{
+  color: #fafafa;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.create-group a{
+  font-size: 10px;
+  color: deepskyblue;
+  padding: 14px;
+  border: 1px solid lightblue;
+  text-decoration: none;
+}
+.groups{
+  background-color:#2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.group{
+  padding: 20px 0 40px;
+}
+.group-name a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.post{
+  background-color: #ffffff;
+  width: calc(100vw - 300px);
+}
+
+.post-header{
+  background-color: #ffffff;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.header-title{
+  margin-top: 36px;
+  font-size: 24px;
+  color: #333;
+}
+
+
+
+.texts {
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+
+.text {
+  margin-bottom: 40px;
+}
+
+.upper-text {
+  padding: 10px 0;
+  display: flex;
+}
+
+.text-user {
+  padding-right: 10px;
+  color: #434a54;
+  font-size: 16px;
+}
+
+.text-date {
+  font-size: 12px;
+  color: #999;
+}
+
