@@ -1,6 +1,6 @@
 <div class = "side-header">
   <div class = "header-name">
-    <%= link_to "user name", "edit_user_path(current_user)" %>
+    <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class = "create-group">
     <%= link_to "groupを作成する", "new_group_path" %>
