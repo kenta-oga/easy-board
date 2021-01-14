@@ -17,6 +17,7 @@
         <%= f.text_field :passcode, class: 'group_name group-form__input', placeholder: 'チャットルーム名を入力してください'%>
       </div>
     </div>
+    <input name="group[user_ids]" type="hidden" value=<%= current_user.id %>>
     <div class='group-form__field'>
       <div class='group-form__field--left'></div>
       <div class='group-form__field--right'>

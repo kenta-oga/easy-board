@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
   with_options presence: true do
     validates :name
-    validates :passcode, format: { with: /[0-9]{4}/ }#, length: { is: 4 }
+    validates :passcode, format: { with: /[0-9]{4}/ }
   end
 
   has_many :group_users
