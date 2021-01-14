@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  with_options presence: true do
+  with_options presence: true, uniqueness: true do
     validates :name
     validates :passcode, format: { with: /[0-9]{4}/ }
   end
