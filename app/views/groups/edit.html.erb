@@ -14,12 +14,13 @@
         <label class='group-form__label' for='group_メンバー'>メンバー</label>
       </div>
     <div class="col-sm-12">
-    <% User.where.not(id: current_user.id).each do |user| %>
+    <% User.where.not(id: @group).each do |user| %>
       <%= f.label :user_ids, value: user.id, class: 'checkbox' do %>
         <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
         <%= user.name %>
       <% end %>
     <% end %>
+    
   </div>
     <div class='group-form__field'>
       <div class='group-form__field--left'></div>

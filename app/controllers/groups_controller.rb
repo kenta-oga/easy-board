@@ -5,11 +5,12 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @users = User.all.where.not(id: current_user.id)
+    @group.users << current_user
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.create(group_params)
+    @group.user_ids << current_user.id
     if @group.save
       redirect_to root_path
     else
@@ -18,6 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
@@ -29,6 +31,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, user_ids: [] )
+    params.require(:group).permit(:name, user_ids: [])
   end
 end
