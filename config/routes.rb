@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "groups#index"
   resources :users, only: [:edit, :update]
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
-    member do
+    collection do
       get 'search'
     end
   end
