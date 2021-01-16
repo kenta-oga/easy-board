@@ -1,5 +1,5 @@
 <div class='group-form'>
-  <h1>新規グループ</h1>
+  <h1>グループ情報編集</h1>
   <%=form_with model: @group, local: true do |f|%>
     <div class='group-form__field'>
       <div class='group-form__field--left'>
@@ -14,14 +14,14 @@
         <label class='group-form__label' for='group_メンバー'>メンバー</label>
       </div>
     <div class="col-sm-12">
-    <% User.where.not(id: @group).each do |user| %>
+    <% User.where.not(id: current_user.id).each do |user| %>
       <%= f.label :user_ids, value: user.id, class: 'checkbox' do %>
         <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
         <%= user.name %>
       <% end %>
     <% end %>
-    
-  </div>
+    <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    </div>
     <div class='group-form__field'>
       <div class='group-form__field--left'></div>
       <div class='group-form__field--right'>
@@ -30,5 +30,3 @@
     </div>
   <% end %>
 </div>
-
-    
