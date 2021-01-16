@@ -20,6 +20,7 @@
         <%= user.name %>
       <% end %>
     <% end %>
+    <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
     </div>
     <div class='group-form__field'>
       <div class='group-form__field--left'></div>

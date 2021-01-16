@@ -5,12 +5,11 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
   end
 
   def create
-    @group = Group.create(group_params)
-    @group.user_ids << current_user.id
+    @group = Group.new(group_params)
+    
     if @group.save
       redirect_to root_path
     else
