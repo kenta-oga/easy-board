@@ -3,16 +3,19 @@
     <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class = "create-group">
-    <%= link_to "groupを作成する", "new_group_path" %>
+    <%= link_to "groupを作成する", new_group_path %>
   </div>
 </div>
 
 <div class = "groups">
-  <%# current_user.rooms.each do |room| %>
+  <% current_user.groups.each do |group| %>
     <div class = "group">
       <div class = "group-name">
-        <%= link_to "group.name", "group_posts_path(group)" %>
+      <%= group.name %>
+        <%# <%= link_to "group.name", "group_posts_path(group)" %> 
+      <%= link_to group.name, edit_group_path(group.id) %>
       </div>
     </div>
-  <%# end %>
+  <% end %>
+
 </div>

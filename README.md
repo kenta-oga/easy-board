@@ -17,9 +17,10 @@
 
 ## groups テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column   | Type    | Options     |
+| -------- | ------- | ----------- |
+| name     | string  | null: false |
+| passcode | integer | null: false |
 
 ### Association
 
