@@ -5,6 +5,11 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :title
-    validates :content
+    validates :content, unless: :was_attached?
   end
+
+  def was_attached?
+    self.image.attached?
+  end
+  
 end
