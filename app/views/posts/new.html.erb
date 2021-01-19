@@ -1,2 +1,21 @@
 <h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= form_with(model: @group, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "内容" %><br />
+    <%= f.text_area :catch_copy, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
