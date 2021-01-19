@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :post_find, only: [:show, :edit, :update, :destroy]
   def index
+    @group = Group.find(params[:group_id])
+    @posts = @group.posts.includes(:user)
   end
 
   def new
