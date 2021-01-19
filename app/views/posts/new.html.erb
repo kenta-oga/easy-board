@@ -1,5 +1,5 @@
 <h1>Posts#new</h1>
-<%= form_with(model: @group, local: true) do |f|%>
+<%= form_with(model: [@group, @post], local: true) do |f|%>
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
     <%= f.text_field :title %>
@@ -7,7 +7,7 @@
 
   <div class="field">
     <%= f.label :content, "内容" %><br />
-    <%= f.text_area :catch_copy, class: :form__text %>
+    <%= f.text_area :content, class: :form__text %>
   </div>
 
   <div class="field">
