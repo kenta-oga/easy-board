@@ -1,7 +1,5 @@
 class Group < ApplicationRecord
-  with_options presence: true, uniqueness: true do
-    validates :name
-  end
+    validates :name, presence: true, uniqueness: true
 
   has_many :group_users, dependent: :destroy
   has_many :users, through: :group_users
