@@ -11,12 +11,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    @group = Group.find(params[:group_id])
     @post = Post.new(post_params)
     if @post.save
       redirect_to root_path
     else
       render :new
     end
+  end
+
+  def show
   end
 
   private
