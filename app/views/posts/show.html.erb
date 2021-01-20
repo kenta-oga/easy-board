@@ -1,5 +1,5 @@
-<%= image_tag @post.image %>
 <%= @post.title %>
+<%= image_tag @post.image if @post.image.attached? %>
 <%= @post.content %>
 <%= @post.user.name %>
 <%= l @post.created_at %>
