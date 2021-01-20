@@ -14,7 +14,7 @@ RSpec.describe Post, type: :model do
       #binding.pry
       @post.title = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include("Title translation missing: ja.activerecord.errors.models.post.attributes.title.blank")
+      expect(@post.errors.full_messages).to include("Title can't be blank")
     end
   end
 end

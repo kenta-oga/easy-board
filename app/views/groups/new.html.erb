@@ -1,6 +1,7 @@
 <div class='group-form'>
   <h1>新規グループ</h1>
   <%=form_with model: @group, local: true do |f|%>
+  <%= render 'shared/error_messages', model: f.object %>
     <div class='group-form__field'>
       <div class='group-form__field--left'>
         <%= f.label :グループ名, class: 'group-form__label'%>
