@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :post_find, only: [:show, :edit, :update, :destroy]
+  before_action :group_find, only: [:show, :edit]
   def index
     @group = Group.find(params[:group_id])
     @posts = @group.posts.includes(:user)
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
 
   def edit
   end
-  
+
   private
 
   def post_params
@@ -35,5 +36,10 @@ class PostsController < ApplicationController
   def post_find
     @post = Post.find(params[:id])
   end
+
+  def group_find
+    @group = Group.find(params[:group_id])
+  end
+
 end
 
