@@ -27,6 +27,22 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def update
+    if @post.update(post_params)
+      redirect_to group_post_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to root_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def post_params

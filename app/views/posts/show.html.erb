@@ -5,3 +5,4 @@
 <%= l @post.created_at %>
 
 <%= link_to "編集",  edit_group_post_path(@group.id, @post.id)%>
+<%= link_to '削除', group_post_path, method: :delete %>
