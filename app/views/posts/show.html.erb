@@ -3,3 +3,5 @@
 <%= @post.content %>
 <%= @post.user.name %>
 <%= l @post.created_at %>
+
+<%= link_to "編集",  edit_group_post_path(@post.id)%>
