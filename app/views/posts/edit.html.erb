@@ -1,2 +1,3 @@
 <h1>投稿編集ページ</h1>
 <%= render partial: "post", local: { post: @post } %>
+<%= link_to "詳細画面に戻る", group_post_path(@post.group.id, @post.id)%>
