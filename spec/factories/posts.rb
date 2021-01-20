@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
     title { Faker::Team.name }
-    content {Faker::Lorem.sentence}
+    content { Faker::Lorem.sentence }
     association :user
     association :group
 

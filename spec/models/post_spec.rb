@@ -15,8 +15,8 @@ RSpec.describe Post, type: :model do
           expect(@post).to be_valid
         end
         it 'imageが空でもcontentが存在すれば新規投稿ができること' do
-        @post.image = nil
-        expect(@post).to be_valid
+          @post.image = nil
+          expect(@post).to be_valid
         end
       end
       context '新規投稿ができない時' do
@@ -34,12 +34,12 @@ RSpec.describe Post, type: :model do
         it 'userが紐づいていないと新規投稿できない' do
           @post.user = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("User must exist")
+          expect(@post.errors.full_messages).to include('User must exist')
         end
         it 'groupが紐づいていないと新規投稿できない' do
           @post.group = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("Group must exist")
+          expect(@post.errors.full_messages).to include('Group must exist')
         end
       end
     end
