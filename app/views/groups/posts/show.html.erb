@@ -1,9 +1,0 @@
-<%= @post.title %>
-<%= image_tag @post.image if @post.image.attached? %>
-<%= @post.content %>
-<%= @post.user.name %>
-<%= l @post.created_at %>
-
-<%= link_to "編集",  edit_group_post_path(@group.id, @post.id)%>
-<%= link_to '削除', group_post_path, method: :delete %>
-<%= link_to '一覧に戻る', group_posts_path %>
