@@ -7,3 +7,25 @@
 <%= link_to "編集",  edit_group_post_path(@group.id, @post.id)%>
 <%= link_to '削除', group_post_path, method: :delete %>
 <%= link_to '一覧に戻る', group_posts_path %>
+
+<div class="post__comments">
+  <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
+  <div class="field">
+      <%= f.label :text, "コメント" %><br />
+      <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+      <%= f.submit "送信する", class: :form__btn  %>
+  </div>
+  <% end %> 
+  <ul class="comments_lists">
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+      <li class="comments_list">
+          <%= comment.text %>
+          <%= comment.user.name %>
+      </li>
+      <% end %>
+    <% end%>
+  </ul>
+</div>
