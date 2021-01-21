@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -37,6 +37,6 @@ class CommentsController < ApplicationController
     @post = @comment.post
     @group = @post.group
     @comments = @post.comments
-    render "posts/show"
+    render 'posts/show'
   end
 end
