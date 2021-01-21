@@ -20,7 +20,6 @@
 | Column   | Type    | Options     |
 | -------- | ------- | ----------- |
 | name     | string  | null: false |
-| passcode | integer | null: false |
 
 ### Association
 
@@ -46,7 +45,6 @@
 | ------- | ---------- | ------------------------------ |
 | title   | string     | null: false                    |
 | content | string     | null: false                    |
-| date    | integer    | null: false                    |
 | user    | references | null: false, foreign_key: true |
 | group   | references | null: false, foreign_key: true |
 
