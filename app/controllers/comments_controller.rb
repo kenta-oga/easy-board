@@ -11,6 +11,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to group_post_path(@comment.post.group.id, @comment.post_id)
+    else
+      @post = @comment.post
+      @group = @post.group
+      @comments = @post.comments
+      render "posts/show"
+    end
+  end
+
   private
 
   def comment_params

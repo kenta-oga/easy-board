@@ -24,6 +24,7 @@
       <li class="comments_list">
           <%= comment.text %>
           <%= comment.user.name %>
+          <%= link_to '削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
       </li>
       <% end %>
     <% end%>
