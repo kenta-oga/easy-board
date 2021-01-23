@@ -46,6 +46,7 @@
 }
 
 .groups-head{
+  text-align:center;
   color: whitesmoke;
   font-size: 25px;
   
@@ -57,10 +58,7 @@
   align-items: center;
 }
 .group-name a{
-  max-width: 100px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  
   font-size: 25px;
   color: whitesmoke;
   text-decoration: none;
