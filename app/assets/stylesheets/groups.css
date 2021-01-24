@@ -25,17 +25,16 @@
   align-items: center;
 }
 
-.header-name {
+.header-name a {
   color: black;
   font-size: 16px;
   text-decoration: none;
 }
 
 .create-group a{
-  font-size: 10px;
-  color: deepskyblue;
+  font-size: 15px;
+  color: black;
   padding: 14px;
-  border: 1px solid lightblue;
   text-decoration: none;
 }
 .groups{
