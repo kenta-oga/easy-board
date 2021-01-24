@@ -1,13 +1,16 @@
+.header{
+ height: 75px;
+}
+
+.side-bar-menu{
+  height: calc(100vh - 75px);
+  overflow: scroll;
+}
 /* index.html.erb */
 .wrapper{
   display: flex;
 }
 
-.side-bar{
-  background-color: #253141;
-  width: 300px;
-  height: 100vh;
-}
 
 .post{
   background-color: #ffffff;
@@ -16,39 +19,23 @@
 /* index.html.erb */
 
 /* side_bar */
-.side-header{
+/* .side-header{
   background-color: #253141;
   height: 100px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.groups{
-  background-color:#2f3e51;
-  height: calc(100vh - 100px);
-  padding: 0 20px;
-  overflow: scroll;
-}
 
 .groups-head{
   text-align:center;
-  color: whitesmoke;
   font-size: 25px;
-  
 }
-.group{
-  padding: 20px 0 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .group-name a{
-  
-  font-size: 25px;
-  color: whitesmoke;
-  text-decoration: none;
+  font-size: 20px;
 }
 
 /* side_bar */
