@@ -25,8 +25,8 @@
   align-items: center;
 }
 
-.header-name a{
-  color: #fafafa;
+.header-name {
+  color: red;
   font-size: 16px;
   text-decoration: none;
 }
