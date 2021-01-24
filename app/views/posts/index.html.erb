@@ -5,3 +5,6 @@
   <%= link_to post.title, group_post_path(post.group.id, post.id)%>
 <% end %>
 <%= link_to "ホーム画面へ戻る", root_path %>
+<div class = "group-edit">
+  <%= link_to "グループを編集", edit_group_path(@group.id) %>
+</div>
