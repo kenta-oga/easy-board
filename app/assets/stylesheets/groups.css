@@ -25,18 +25,6 @@
   align-items: center;
 }
 
-.header-name a {
-  color: black;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.create-group a{
-  font-size: 15px;
-  color: black;
-  padding: 14px;
-  text-decoration: none;
-}
 .groups{
   background-color:#2f3e51;
   height: calc(100vh - 100px);

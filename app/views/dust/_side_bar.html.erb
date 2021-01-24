@@ -1,8 +1,13 @@
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-2 d-block bg-light">
-      <div class="sidebar-sticky pt-3">
-        <div class = "groups">
+<div class = "side-header">
+  <div class = "header-name">
+    
+  </div>
+  <div class = "create-group">
+    <%= link_to "グループ新規作成", new_group_path %>
+  </div>
+</div>
+
+<div class = "groups">
   <div class = "groups-head">グループ一覧</div>
   <% current_user.groups.each do |group| %>
     <div class = "group">
@@ -12,8 +17,4 @@
     </div>
   <% end %>
 
-</div>
-      </div>
-    </nav>
-  </div>
 </div>
