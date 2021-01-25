@@ -2,12 +2,8 @@
  height: 75px;
 }
 
-.side-bar-menu{
-  height: calc(100vh - 75px);
-  overflow: scroll;
-}
 /* index.html.erb */
-.wrapper{
+/* .wrapper{
   display: flex;
 }
 
@@ -15,23 +11,19 @@
 .post{
   background-color: #ffffff;
   width: calc(100vw - 300px);
-}
+} */
 /* index.html.erb */
 
 /* side_bar */
-/* .side-header{
-  background-color: #253141;
-  height: 100px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
 
 .groups-head{
   text-align:center;
   font-size: 25px;
+}
+
+.side-bar-menu{
+  height: calc(100vh - 75px);
+  overflow: scroll;
 }
 
 .group-name a{

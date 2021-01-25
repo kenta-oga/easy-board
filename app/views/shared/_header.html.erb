@@ -1,9 +1,9 @@
 <div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
-  <h3 class="header-title my-0 mr-auto font-weight-bold">
-    <%= link_to "Easy Board", root_path, {class: "text-body text-decoration-none"} %>
-  </h3>
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to "Easy Board", root_path, {class: "h1 text-body text-decoration-none"} %>
+  </div>
   <div class="mr-md-3">こんにちは、
-    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body text-decoration-none font-weight-bold"} %>さん
+    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
   </div>
   <div class="btn btn-primary">
     <%= link_to "グループ新規作成", new_group_path, {class: "text-white text-decoration-none font-weight-bold"} %>
