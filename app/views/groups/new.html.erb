@@ -1,33 +1,35 @@
-<div class='group-form'>
-  <h1>新規グループ</h1>
-  <%=form_with model: @group, local: true do |f|%>
-  <%= render 'shared/error_messages', model: f.object %>
-    <div class='group-form__field'>
-      <div class='group-form__field--left'>
-        <%= f.label :グループ名, class: 'group-form__label'%>
-      </div>
-      <div class='group-form__field--right'>
-        <%= f.text_field :name, class: 'group_name group-form__input', placeholder: 'チャットルーム名を入力してください'%>
-      </div>
-    </div>
-    <div class='group-form__field'>
-      <div class='group-form__field--left'>
-        <label class='group-form__label' for='group_メンバー'>メンバー</label>
-      </div>
-    <div class="col-sm-12">
-    <% User.where.not(id: current_user.id).each do |user| %>
-      <%= f.label :user_ids, value: user.id, class: 'checkbox' do %>
-        <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
-        <%= user.name %>
+<%= render "shared/header" %>
+  
+    <div class='group-form text-center'>
+      <h1>新規グループ</h1>
+      <%=form_with model: @group, local: true do |f|%>
+      <%= render 'shared/error_messages', model: f.object %>
+        <div class='group-name-form'>
+          <div class='group-form-left'>
+            <%= f.label :グループ名, class: 'group-form__label'%>
+          </div>
+          <div class='group-form-right'>
+            <%= f.text_field :name, class: 'group_name group-form__input', placeholder: '新規グループ名を入力'%>
+          </div>
+        </div>
+        <div class='group-name-form'>
+          <div class='group-form-left'>
+            <label class='group-form-label'>グループメンバー</label>
+          </div>
+        <div class="">
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <%= f.label :user_ids, value: user.id, class: 'checkbox' do %>
+            <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
+            <%= user.name %>
+          <% end %>
+        <% end %>
+        <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+        </div>
+        <div class='group-form'>
+          <div class='group-form-left'></div>
+          <div class='group-form--right'>
+            <%= f.submit "作成", class: "btn btn-primary px-5 font-weight-bold"%>
+          </div>
+        </div>
       <% end %>
-    <% end %>
-    <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
     </div>
-    <div class='group-form__field'>
-      <div class='group-form__field--left'></div>
-      <div class='group-form__field--right'>
-        <%= f.submit class: 'group-form__action-btn'%>
-      </div>
-    </div>
-  <% end %>
-</div>
