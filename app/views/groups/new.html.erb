@@ -1,18 +1,18 @@
 <%= render 'shared/header' %>
-  <div class = 'group-form-body'>
-    <div class='group-form text-center m-auto'>
+  <div class = 'form-body'>
+    <div class='forms text-center m-auto'>
       <h1 class = 'font-weight-bold mb-5'>新規グループ作成</h1>
       <%=form_with model: @group, local: true do |f|%>
       <%= render 'shared/error_messages', model: f.object %>
-        <div class='group-name-form'>
+        <div class='form'>
           <h3 class = 'form-label'>
             <%= f.label :グループ名%>
           </h3>
           <div>
-            <%= f.text_field :name, class: 'group-form-input', placeholder: '新規グループ名を入力'%>
+            <%= f.text_field :name, class: 'form-input', placeholder: '新規グループ名を入力'%>
           </div>
         </div>
-        <div class='group-name-form'>
+        <div class='form'>
           <h3 class = 'form-label'>
             <%= f.label :グループメンバー%>
           </h3>
@@ -25,7 +25,7 @@
         <% end %>
         <input name='group[user_ids][]' type='hidden' value=<%= current_user.id %>>
         </div>
-        <div class='group-form'>
+        <div class='submit pt-4'>
           <%= f.submit '作成', class: 'btn btn-primary px-5 font-weight-bold'%>
         </div>
       <% end %>

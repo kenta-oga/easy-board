@@ -60,14 +60,14 @@
 /* main */
 
 /* new */
-.group-form-body {
+.form-body {
   height: calc(100vh - 75px);
   display: flex;
   padding-bottom: 60px;
   background-color: #f5f5f5;
   
 }
-.group-form {
+.forms {
   max-width: 420px;
   padding: 15px;
 }
@@ -75,11 +75,11 @@
 .form-label {
   font-weight: 500;
 }
-.group-name-form {
+.form {
   margin-bottom: 30px;
 }
 
-.group-form-input {
+.form-input {
   border-radius: 0.5em;
   width: 420px;
   padding: 10px;

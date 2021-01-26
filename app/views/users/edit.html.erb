@@ -1,32 +1,28 @@
 <%= render "shared/header" %>
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>アカウントの編集</h2>
-    </div>
-    <div class='account-page__inner--right user-form'>
+<div class = 'form-body'>
+  <div class='forms text-center m-auto'>
+    <h1 class = 'font-weight-bold mb-5'>アカウントの編集</h1>
       <%= form_with model: current_user, local: true do |f|%>
       <%= render 'shared/error_messages', model: f.object %>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :name%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :name, autofocus: true%>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email%>
+        <div class='form'>
+          <h3 class='form-label'>
+            <%= f.label :ユーザー名%>
+          </h3>
+          <div>
+            <%= f.text_field :name, class: 'form-input', placeholder: 'ユーザー名を入力', autofocus: true%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
+        <div class='form'>
+          <h3 class='form-label'>
+            <%= f.label :メールアドレス%>
+          </h3>
+          <div>
+            <%= f.email_field :email, class: 'form-input', placeholder: 'メールアドレスを入力'%>
+          </div>
+        </div>
+        <div class='submit pt-4'>
+          <%= f.submit "編集", class: 'btn btn-primary px-5 font-weight-bold'%>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
