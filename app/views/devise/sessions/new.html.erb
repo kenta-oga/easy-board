@@ -1,37 +1,31 @@
 <%= render "shared/second_header" %>
-<div class='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>ログイン</h2>
-      <%= link_to "ユーザー新規登録", new_registration_path(resource_name) %><br />
-    </div>
-    <div class='account-page__inner--right user-form'>
+<div class='form-body'>
+  <div class='forms text-center m-auto'>
+    <h1 class = 'font-weight-bold mb-5'>ログイン</h1>
     <div class='login-flash-message'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
-      <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-              <div class='field'>
-          <div class='field-label'>
-            <%= f.label :メールアドレス%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email, autofocus: true%>
-          </div>
-          <div class='field'>
-            <div class='field-label'>
-              <%= f.label :パスワード%>
-              <i>(英数字混合6文字以上)</i>
-            </div>
-            <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
-            </div>
-          </div>
-          <div class='actions'>
-            <%= f.submit "ログイン", class: 'btn btn-primary px-5 font-weight-bold'%>
-          </div>
+    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :メールアドレス%>
+        </h3>
+        <div>
+          <%= f.email_field :email, class: 'form-input', placeholder: '登録したメールアドレスを入力', autofocus: true%>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :パスワード%>
+        </h3>
+        <div>
+          <%= f.password_field :password, class: 'form-input', placeholder: '英数字混合6文字以上', autocomplete: "off"%>
+        </div>
+      </div>
+      <div class='submit pt-4'>
+        <%= f.submit "ログイン", class: 'btn btn-primary px-5 font-weight-bold'%>
+      </div>
+    <% end %>
   </div>
 </div>
