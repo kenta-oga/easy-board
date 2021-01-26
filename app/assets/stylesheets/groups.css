@@ -60,6 +60,13 @@
 /* main */
 
 /* new */
+.group-form-body {
+  height: calc(100vh - 75px);
+  display: flex;
+  
+  padding-bottom: 60px;
+  background-color: #f5f5f5;
+}
 .group-form {
   width: 100%;
   max-width: 420px;
@@ -67,12 +74,15 @@
   margin: auto;
 }
 
+.form-label {
+  font-weight: 500;
+}
 .group-name-form {
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
 }
 
 .checkbox {
   display: inline-block;
   width: 100px;
-  text-align: left;
+  margin-left: 25px;
 }
