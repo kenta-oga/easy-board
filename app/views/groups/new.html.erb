@@ -1,35 +1,32 @@
-<%= render "shared/header" %>
-  <div class = "group-form-body">
-    <div class='group-form text-center'>
-      <h1 class = "font-weight-bold mb-5">新規グループ作成</h1>
+<%= render 'shared/header' %>
+  <div class = 'group-form-body'>
+    <div class='group-form text-center m-auto'>
+      <h1 class = 'font-weight-bold mb-5'>新規グループ作成</h1>
       <%=form_with model: @group, local: true do |f|%>
       <%= render 'shared/error_messages', model: f.object %>
         <div class='group-name-form'>
-          <h3 class = "form-label">
+          <h3 class = 'form-label'>
             <%= f.label :グループ名%>
           </h3>
-          <div class='group-form-right'>
-            <%= f.text_field :name, class: 'group_name group-form__input', placeholder: '新規グループ名を入力'%>
+          <div>
+            <%= f.text_field :name, class: 'group-form-input', placeholder: '新規グループ名を入力'%>
           </div>
         </div>
         <div class='group-name-form'>
-          <h3 class = "form-label">
+          <h3 class = 'form-label'>
             <%= f.label :グループメンバー%>
           </h3>
-        <div class="text-left">
+        <div class='text-left'>
         <% User.where.not(id: current_user.id).each do |user| %>
           <%= f.label :user_ids, value: user.id, class: 'checkbox' do %>
             <%= f.check_box :user_ids, { multiple: true }, user.id, nil %>
             <%= user.name %>
           <% end %>
         <% end %>
-        <input name="group[user_ids][]" type="hidden" value=<%= current_user.id %>>
+        <input name='group[user_ids][]' type='hidden' value=<%= current_user.id %>>
         </div>
         <div class='group-form'>
-          <div class='group-form-left'></div>
-          <div class='group-form--right'>
-            <%= f.submit "作成", class: "btn btn-primary px-5 font-weight-bold"%>
-          </div>
+          <%= f.submit '作成', class: 'btn btn-primary px-5 font-weight-bold'%>
         </div>
       <% end %>
     </div>
