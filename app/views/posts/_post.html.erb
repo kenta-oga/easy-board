@@ -1,21 +1,31 @@
-<%= form_with(model: [@group, @post], local: true) do |f|%>
-  <%= render 'shared/error_messages', model: f.object %>
-  <div class="field">
-    <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= f.label :content, "内容" %><br />
-    <%= f.text_area :content, class: :form__text %>
-  </div>
+    <%= form_with(model: [@group, @post], local: true) do |f|%>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="form">
+        <h3 class='form-label'>
+          <%= f.label :タイトル %>
+        </h3>
+        <div>
+          <%= f.text_field :title, class: 'form-input', placeholder: 'タイトルを入力', autofocus: true %>
+        </div>
+      </div>
+      <div class="form">
+        <h3 class='form-label'>
+          <%= f.label :内容 %>
+        </h3>
+        <div>
+          <%= f.text_area :content, class: 'form-input content', placeholder: '内容を入力' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :image, "画像" %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
-  </div>
-<% end %>
+      <div class="form">
+        <h3 class='form-label mt-3'>
+          <%= f.label :画像 %>
+        </h3>
+        <div>
+          <%= f.file_field :image, class: 'text-center' %>
+        </div>
+      </div>
+      <div class="submit pt-4">
+        <%= f.submit "保存する", class: 'btn btn-primary px-5 font-weight-bold' %>
+      </div>
+    <% end %>
