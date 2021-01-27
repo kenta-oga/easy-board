@@ -2,8 +2,10 @@
   <div class="header-title my-0 mr-auto font-weight-bold">
     <%= link_to "Easy Board", root_path, {class: "h1 text-body text-decoration-none"} %>
   </div>
-   <div class="btn btn-primary">
-    <%= link_to "ユーザー新規登録", new_registration_path(resource_name), class: "text-white text-decoration-none font-weight-bold" %>
-  </div>
+  <% if current_page?(new_user_session_path) %>
+    <div class="btn btn-primary">
+      <%= link_to "ユーザー新規登録", new_registration_path(resource_name), class: "text-white text-decoration-none font-weight-bold" %>
+    </div>
+  <% end %>
 </div>
 <%# <%= link_to "ユーザー新規登録", new_registration_path(resource_name), class: "text-body text-decoration-none font-weight-bold" %>
