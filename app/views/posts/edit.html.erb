@@ -1,3 +1,8 @@
-<h1>投稿編集ページ</h1>
-<%= render partial: "post", local: { post: @post } %>
+<%= render "shared/header" %>
+<div class = "form-body pt-5 overflow-auto">
+  <div class="forms text-center m-auto">
+  <h1 class = "font-weight-bold mb-5">投稿編集</h1>
+    <%= render partial: "post", local: { post: @post } %>
+  </div>
+</div>
 <%= link_to "詳細画面に戻る", group_post_path(@post.group.id, @post.id)%>
