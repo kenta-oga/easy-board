@@ -3,6 +3,6 @@
   <div class="forms text-center m-auto">
     <h1 class = "font-weight-bold mb-5">新規投稿</h1>
     <%= render partial: "post", local: { post: @post } %>
+    <%= link_to '一覧に戻る', group_posts_path %>
   </div>
 </div>
-<%= link_to '一覧に戻る', group_posts_path %>
