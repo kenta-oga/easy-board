@@ -16,6 +16,9 @@
 
 /* side_bar */
 
+.side-bar {
+  width: 15%;
+}
 .groups-head{
   text-align:center;
   font-size: 25px;
