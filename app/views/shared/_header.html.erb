@@ -1,14 +1,16 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="header-name my-0 mr-md-auto font-weight-normal">Easy Board</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    こんにちは
-    <a class="p-2 text-dark"><%= link_to current_user.name, edit_user_path(current_user) %></a>
-    さん
-  </nav>
-  <div class="btn btn-outline-primary">
-    <%= link_to "グループ新規作成", new_group_path %>
+<div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to "Easy Board", root_path, {class: "h1 text-body text-decoration-none"} %>
   </div>
-  <div class="btn btn-outline-primary ml-3">
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+  <div class="mr-md-3">こんにちは、
+    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
+  </div>
+  <% unless current_page?(new_group_path) %>
+    <div class="btn btn-primary">
+      <%= link_to "グループ新規作成", new_group_path, {class: "text-white text-decoration-none font-weight-bold"} %>
+    </div>
+  <% end %>
+  <div class="btn btn-outline-secondary ml-3">
+    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
   </div>
 </div>

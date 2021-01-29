@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.group-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.group-name-form {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.group-form > input,
+.group-form > label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.group-name-form > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.group-form input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.group-form input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.group-form input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.group-form input::-moz-placeholder {
+  color: transparent;
+}
+
+.group-form input::placeholder {
+  color: transparent;
+}
+
+.group-form input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.group-form input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .group-form > label {
+    display: none;
+  }
+  .group-form input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .group-form > label {
+    display: none;
+  }
+  .group-form input:-ms-input-placeholder {
+    color: #777;
+  }
+}

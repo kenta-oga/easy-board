@@ -1,95 +1,36 @@
+.header{
+ height: 75px;
+}
+
 /* index.html.erb */
-.wrapper{
+/* .wrapper{
   display: flex;
 }
 
-.side-bar{
-  background-color: #253141;
-  width: 300px;
-  height: 100vh;
-}
 
 .post{
   background-color: #ffffff;
   width: calc(100vw - 300px);
-}
+} */
 /* index.html.erb */
 
 /* side_bar */
-.side-header{
-  background-color: #253141;
-  height: 100px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.side-bar {
+  width: 15%;
+}
+.groups-head{
+  text-align:center;
+  font-size: 25px;
 }
 
-.header-name {
-  color: red;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.create-group a{
-  font-size: 10px;
-  color: deepskyblue;
-  padding: 14px;
-  border: 1px solid lightblue;
-  text-decoration: none;
-}
-.groups{
-  background-color:#2f3e51;
-  height: calc(100vh - 100px);
-  padding: 0 20px;
+.side-bar-menu{
+  height: calc(100vh - 75px);
   overflow: scroll;
 }
 
-.groups-head{
-  text-align:center;
-  color: whitesmoke;
-  font-size: 25px;
-  
-}
-.group{
-  padding: 20px 0 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .group-name a{
-  
-  font-size: 25px;
-  color: whitesmoke;
-  text-decoration: none;
+  font-size: 20px;
 }
 
 /* side_bar */
-
-/* main */
-.post-header{
-  background-color: #ffffff;
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.left-header{}
-
-.header-title{
-  margin-top: 36px;
-  font-size: 24px;
-  color: #333;
-}
-
-.right-header{}
-
-.texts {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  padding: 46px 40px 0;
-  overflow: scroll;
-}
-/* main */
-
