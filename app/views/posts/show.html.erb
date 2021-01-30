@@ -7,38 +7,61 @@
         <h1 class="text-left ml-5"><%= @post.group.name %></h1>
       </div>
       <div class="post-box mx-auto">
-        <h2 class ="mt-5 pt-3 font-weight-bold"><%= @post.title %></h2>
-        <div clss="post-date"><%= l @post.created_at %></div>
-        <div class="post-user text-right pr-2">by <%= @post.user.name %></div>
-        <div class="post-content my-5 px-2"><%= @post.content %></div>
-        <div class="pb-3 px-2"><%= image_tag @post.image if @post.image.attached? %></div>
-
-
-      </div>
-        <div class="post-comments mt-5">
-          <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
-          <div class="field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text %>
-          </div>
-          <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-          </div>
-          <% end %> 
-          <ul class="comments_lists">
-            <% if @comments %>
-              <% @comments.each do |comment| %>
-              <li class="comments_list">
-                  <%= comment.text %>
-                  <%= comment.user.name %>
-                  <%= link_to '削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
-              </li>
-              <% end %>
-            <% end%>
-          </ul>
+        <h2 class ="mt-5 pt-3 font-weight-bold">
+          <%= @post.title %>
+        </h2>
+        <div class="post-user text-right pr-2">
+          by <%= @post.user.name %>
         </div>
-        <div><%= link_to "編集",  edit_group_post_path(@group.id, @post.id)%></div>
-        <div><%= link_to '削除', group_post_path(@group.id, @post.id), method: :delete %></div>
-        <div><%= link_to '一覧に戻る', group_posts_path %></div>
+        <div class="post-date text-right pr-2">
+          <%= l @post.created_at %>
+        </div>
+        <div class="post-content my-5 px-2">
+          <%= @post.content %>
+        </div>
+        <div class="pb-5 px-2">
+          <%= image_tag @post.image if @post.image.attached? %>
+        </div>
+      </div>
+      <div class="post-comments mt-5">
+        <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
+        <div class="form">
+          <h3 class='form-label mt-3'>
+            <%= f.label :コメント%>
+          </h3>
+          <%= f.text_field :text, class: 'form-input', placeholder: 'コメントを入力' %>
+        </div>
+        <div class="submit mb-5">
+          <%= f.submit "送信", class: 'btn btn-primary px-5 font-weight-bold' %>
+        </div>
+        <% end %> 
+        <div class="comments">
+          <% if @comments %>
+            <div class="comment-index">コメント一覧</div>
+            <% @comments.each do |comment| %>
+              <ul>
+                <li class="comment mb-5">
+                  <div class="comment-text">
+                    <%= comment.text %>
+                  </div>
+                  <div class="comment-right">
+                    <div class="comment-user">
+                      by <%= comment.user.name %>
+                    </div>
+                    <div>
+                      <%= link_to 'コメントを削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            <% end %>
+          <% end%>
+        </div>
+      </div>
+      <div><%= link_to "編集",  edit_group_post_path(@group.id, @post.id)%></div>
+      <div><%= link_to '削除', group_post_path(@group.id, @post.id), method: :delete %></div>
+      <div><%= link_to '一覧に戻る', group_posts_path %></div>
     </div>
   </div>
+
+ 

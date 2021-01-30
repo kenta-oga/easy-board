@@ -12,10 +12,37 @@
 }
 
 .post-box {
-  width: 600px;
+  width: 1000px;
   background-color: lightyellow;
 }
 
 .post-content {
   text-align: left;
+}
+
+.comments {
+  width: 460px;
+  margin: auto;
+}
+
+.comment-index {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+li {
+  list-style: none;
+}
+
+.comment-text {
+  text-align: left;
+}
+
+.comment-right {
+  display: flex;
+  float: right;
+}
+
+.comment-user {
+  padding-right: 10px;
 }
