@@ -1,10 +1,41 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<%= link_to "新規投稿", new_group_post_path %>
-<% @posts.each do |post| %>
-  <%= link_to post.title, group_post_path(post.group.id, post.id)%>
-<% end %>
-<%= link_to "Easy Board", root_path %>
-<div class = "group-edit">
-  <%= link_to "グループを編集", edit_group_path(@group.id) %>
+<%= render "shared/header" %>
+<div class="post-wrapper">
+  <%= render "groups/side_bar" %>
+  <div class="post-main pb-5 text-center">
+    <div class ="group-name-bar">
+      <h1 class="text-left ml-5"><%= @group.name %></h1>
+    </div>
+      <%= link_to "新規投稿", new_group_post_path %>
+      <% @posts.each do |post| %>
+        <%= link_to post.title, group_post_path(post.group.id, post.id)%>
+      <% end %>
+      <%= link_to "Easy Board", root_path %>
+      <div class = "group-edit">
+        <%= link_to "グループを編集", edit_group_path(@group.id) %>
+      </div>
+
+        
+    <div class="card-deck mb-3 text-center">
+      <% @posts.each do |post| %>
+          <div class="post-card mb-4 shadow-sm">
+        <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
+            <div class="card-header">
+              <h4 class="post-title my-0 font-weight-normal">
+                <%= post.title %>
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="post-content">
+                <%= post.content %>
+              </div>
+              <div class="my-auto px-2 text-right">
+                <%= image_tag post.image.variant(resize: '300x300') if post.image.attached? %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>

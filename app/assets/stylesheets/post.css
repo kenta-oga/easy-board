@@ -1,5 +1,5 @@
-.post-show {
-  overflow: auto;
+.post-main {
+  overflow-y: scroll;
   width: 85%;
   height: calc(100vh - 75px);
   
@@ -45,4 +45,27 @@ li {
 
 .comment-user {
   padding-right: 10px;
+}
+
+.post-wrapper {
+  display: flex;
+}
+
+.card-deck {
+  width: 100%;
+  padding-left: 30px;
+}
+
+.post-card {
+  width: 100%;
+}
+
+.post-link {
+  text-decoration: none !important;
+  color: black;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
 }
