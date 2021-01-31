@@ -35,21 +35,21 @@
         <%=  simple_format(@post.content) %>
       </div>
       <div class="pb-5 px-2">
-        <%= image_tag @post.image.variant(resize: '600x600') if @post.image.attached? %>
+        <%= image_tag @post.image.variant(resize: "600x600") if @post.image.attached? %>
       </div>
     </div>
     <div class="post-comments mt-2">
       <div class="comment-form mb-2">
         <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
-          <%= render 'shared/error_messages', model: f.object %>
+          <%= render "shared/error_messages", model: f.object %>
         <div class="form">
-          <h3 class='form-label mt-3'>
+          <h3 class="form-label mt-3">
             <%= f.label :コメント%>
           </h3>
-          <%= f.text_field :text, class: 'form-input', placeholder: 'コメントを入力' %>
+          <%= f.text_field :text, class: "form-input", placeholder: "コメントを入力" %>
         </div>
         <div class="submit mb-5">
-          <%= f.submit "送信", class: 'btn btn-primary px-5 font-weight-bold' %>
+          <%= f.submit "送信", class: "btn btn-primary px-5 font-weight-bold" %>
         </div>
       </div>
       <% end %> 
@@ -67,7 +67,7 @@
                     by <%= comment.user.name %>
                   </div>
                   <div class="comment-delete mr-3">
-                    <%= link_to 'コメントを削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
+                    <%= link_to "コメントを削除", group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
                   </div>
                 </div>
               </li>
