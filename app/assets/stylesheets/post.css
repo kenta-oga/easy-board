@@ -1,5 +1,4 @@
 .post-main {
-  
   width: 85%;
   height: calc(100vh - 75px);
   background-color: #ffffff;
@@ -9,13 +8,13 @@
 }
 
 .group-name-bar {
-  background-color: #555555;
+  background-color: #00008B;
   width: 100%;
   height: 60px;
 }
 
 .post-box {
-  width: 1000px;
+  width: 800px;
   background-color: white;
   border: 1px solid lightgrey;
 }
@@ -24,16 +23,21 @@
   text-align: left;
 }
 
-.comments {
-  width: 460px;
+.comment-form {
+  width: 800px;
   margin: auto;
+  background-color: white;
+  border: 1px solid lightgrey;
 }
 
-.comment-index {
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
+.comments {
+  width: 800px;
+  margin: auto;
+  background-color: white;
+  border: 1px solid lightgrey;
 }
+
+
 li {
   list-style: none;
 }
@@ -55,7 +59,18 @@ li {
   display: flex;
 }
 
+.group-members {
+  background-color: #B0C4DE;
+}
 
+.member-head {
+  min-width: 90px;
+}
+
+.group-member {
+  flex-wrap: wrap;
+
+}
 .card-deck {
   width: 100%;
   padding-left: 30px;
@@ -63,10 +78,10 @@ li {
 
 .post-cards {
   width: 100%;
-  height: 400px;
+  height: 490px;
   overflow: scroll;
 }
-.post-card, .posts-header{
+.post-card {
   width: 100%;
   background-color: #FFFFFF;
   border: 1px solid #8EB8FF	;

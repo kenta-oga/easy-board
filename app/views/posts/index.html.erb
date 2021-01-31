@@ -19,23 +19,25 @@
 <div class="post-wrapper">
   <%= render "groups/side_bar" %>
   <div class="post-main pb-5 text-center">
-    <div class ="group-name-bar py-1 mb-1">
-      <h1 class="text-left ml-4 text-white">
+    <div class ="group-name-bar py-1 d-flex">
+      <h1 class="text-left ml-4 text-white font-weight-bold">
         <%= @group.name %>
       </h1>
     </div>
-    <div class="group-users d-flex mb-4 ml-5">
-      <h5 class="font-weight-bold">メンバー:</h5>
-      <% @group.users.each do |user| %>
-        <h5 class="mx-2"><%= user.name %></h5>
-      <% end %>
+    <div class="group-members d-flex align-items-center pl-3 py-2">
+      <h5 class="member-head font-weight-bold">メンバー:</h5>
+      <div class="group-member d-flex">
+        <% @group.users.each do |user| %>
+          <h5 class="mx-2"><%= user.name %></h5>
+        <% end %>
+      </div>
     </div>
-    <div class="card-deck">
-      <div class="posts-header shadow-sm d-flex text-left py-3">
-        <h2 class="posts-header-title w-50 font-weight-bold pl-2">タイトル</h2>
+      <div class="posts-header d-flex text-left py-3">
+        <h2 class="posts-header-title w-50 font-weight-bold pl-3">タイトル</h2>
         <h2 class="posts-header-user w-25 font-weight-bold">投稿者</h2>
         <h2 class="posts-header-date w-25 font-weight-bold">投稿日</h2>
       </div>
+    <div class="card-deck">
       <div class="post-cards">
         <% @posts.each do |post| %>
           <div class="post-card shadow-sm">
