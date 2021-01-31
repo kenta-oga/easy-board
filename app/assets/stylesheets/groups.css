@@ -3,22 +3,19 @@
 }
 
 /* index.html.erb */
-/* .wrapper{
-  display: flex;
+
+.top-message {
+  text-align: center;
+  color: #4169E1;
 }
 
-
-.post{
-  background-color: #ffffff;
-  width: calc(100vw - 300px);
-} */
 /* index.html.erb */
 
 /* side_bar */
 
 .side-bar {
   width: 15%;
-  background-color: #DDDDDD;
+  background-color: #D9E5FF;
 }
 .groups-head{
   text-align:center;
