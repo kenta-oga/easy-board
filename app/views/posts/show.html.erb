@@ -9,9 +9,6 @@
     <%= link_to "投稿を編集", edit_group_post_path(@group.id, @post.id), {class: "text-white text-decoration-none font-weight-bold"} %>
   </div>
   <div class="btn btn-outline-primary ml-3">
-    <%= link_to "投稿を削除", group_post_path(@group.id, @post.id), {method: :delete, class: "text-body text-decoration-none font-weight-bold"} %>
-  </div>
-  <div class="btn btn-outline-primary ml-3">
     <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
   </div>
 </div>
