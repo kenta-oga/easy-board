@@ -1,14 +1,13 @@
 
-    <div class="side-bar">
-      <div class = "groups-head text-body font-weight-bold">グループ一覧</div>
-      <div class="side-bar-menu pb-5">      
-        <% current_user.groups.each do |group| %>
-          <div class = "group py-3 pl-2">
-            <div class = "group-name overflow-hidden">
-              <%= link_to group.name, group_posts_path(group), {class: "text-body"} %> 
-            </div>
-          </div>
-        <% end %>
+<div class="side-bar">
+  <div class = "groups-head text-body font-weight-bold">グループ一覧</div>
+  <div class="side-bar-menu pb-5">      
+    <% current_user.groups.each do |group| %>
+      <div class = "group py-3 pl-2">
+        <div class = "group-name overflow-hidden">
+          <%= link_to group.name, group_posts_path(group), {class: "text-body"} %> 
+        </div>
       </div>
-    </div>
- 
+    <% end %>
+  </div>
+</div>

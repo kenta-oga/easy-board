@@ -2,7 +2,7 @@
   <div class="header-title my-0 mr-auto font-weight-bold">
     <%= link_to image_tag("logo.png"), root_path %>
   </div>
-  <div class="mr-md-3">こんにちは、
+  <div class="current-user mr-md-3">こんにちは、
     <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
   </div>
   <div class="btn btn-primary">
@@ -16,69 +16,70 @@
   </div>
 </div>
 
-  <div class="d-flex">
-    <%= render "groups/side_bar" %>
-    <div class="post-main pb-5 text-center">
-      <div class ="group-name-bar py-1 mb-1">
-        <h1 class="text-left ml-4 text-white font-weight-bold">
-          <%= @post.group.name %>
-        </h1>
+<div class="d-flex">
+  <%= render "groups/side_bar" %>
+  <div class="main pb-5 text-center">
+    <div class ="group-name-bar py-1 mb-1">
+      <h1 class="text-left ml-4 text-white font-weight-bold">
+        <%= @post.group.name %>
+      </h1>
+    </div>
+    <div class="overflow-auto h-100">
+      <div class="post-box mx-auto mt-2 px-5">
+        <h2 class ="mt-5 pt-3 font-weight-bold">
+          <%= @post.title %>
+        </h2>
+        <div class="post-user text-right pr-2">
+          by <%= @post.user.name %>
+        </div>
+        <div class="post-date text-right pr-2">
+          <%= l @post.created_at %>
+        </div>
+        <div class="post-content my-5 px-2">
+          <%=  simple_format(@post.content) %>
+        </div>
+        <div class="pb-5 px-2">
+          <%= image_tag @post.image.variant(resize: '600x600') if @post.image.attached? %>
+        </div>
       </div>
-      <div class="overflow-auto h-100">
-        <div class="post-box mx-auto mt-5 px-5">
-          <h2 class ="mt-5 pt-3 font-weight-bold">
-            <%= @post.title %>
-          </h2>
-          <div class="post-user text-right pr-2">
-            by <%= @post.user.name %>
+      <div class="post-comments mt-2">
+        <div class="comment-form mb-2">
+          <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
+            <%= render 'shared/error_messages', model: f.object %>
+          <div class="form">
+            <h3 class='form-label mt-3'>
+              <%= f.label :コメント%>
+            </h3>
+            <%= f.text_field :text, class: 'form-input', placeholder: 'コメントを入力' %>
           </div>
-          <div class="post-date text-right pr-2">
-            <%= l @post.created_at %>
-          </div>
-          <div class="post-content my-5 px-2">
-            <%=  simple_format(@post.content) %>
-          </div>
-          <div class="pb-5 px-2">
-            <%= image_tag @post.image.variant(resize: '600x600') if @post.image.attached? %>
+          <div class="submit mb-5">
+            <%= f.submit "送信", class: 'btn btn-primary px-5 font-weight-bold' %>
           </div>
         </div>
-        <div class="post-comments mt-5">
-          <div class="comment-form mb-5">
-            <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
-            <div class="form">
-              <h3 class='form-label mt-3'>
-                <%= f.label :コメント%>
-              </h3>
-              <%= f.text_field :text, class: 'form-input', placeholder: 'コメントを入力' %>
-            </div>
-            <div class="submit mb-5">
-              <%= f.submit "送信", class: 'btn btn-primary px-5 font-weight-bold' %>
-            </div>
-          </div>
-          <% end %> 
-          <div class="comments mb-5 p-3">
-            <% if @comments %>
-              <h3 class="comment-list mb-5">コメント一覧</h3>
-              <% @comments.each do |comment| %>
-                <ul>
-                  <li class="comment py-4">
-                    <div class="comment-text mr-3">
-                      <%= comment.text %>
+        <% end %> 
+        <div class="comments-box mb-5 p-3">
+          <% if @comments %>
+            <h3 class="mb-5">コメント一覧</h3>
+            <% @comments.each do |comment| %>
+              <ul class="comments-list">
+                <li class="comment py-4">
+                  <div class="comment-text mr-3">
+                    <%= comment.text %>
+                  </div>
+                  <div class="comment-right">
+                    <div class="comment-user">
+                      by <%= comment.user.name %>
                     </div>
-                    <div class="comment-right">
-                      <div class="comment-user">
-                        by <%= comment.user.name %>
-                      </div>
-                      <div class="comment-delete mr-3">
-                        <%= link_to 'コメントを削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
-                      </div>
+                    <div class="comment-delete mr-3">
+                      <%= link_to 'コメントを削除', group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
                     </div>
-                  </li>
-                </ul>
-              <% end %>
-            <% end%>
-          </div>
+                  </div>
+                </li>
+              </ul>
+            <% end %>
+          <% end%>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -1,4 +1,4 @@
-.post-main {
+.main {
   width: 85%;
   height: calc(100vh - 75px);
   background-color: #ffffff;
@@ -30,13 +30,12 @@
   border: 1px solid lightgrey;
 }
 
-.comments {
+.comments-box {
   width: 800px;
   margin: auto;
   background-color: white;
   border: 1px solid lightgrey;
 }
-
 
 li {
   list-style: none;
@@ -55,8 +54,8 @@ li {
   padding-right: 10px;
 }
 
-.post-wrapper {
-  display: flex;
+.comment {
+  border-bottom: 1px solid #8EB8FF;
 }
 
 .group-members {
