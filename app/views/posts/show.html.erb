@@ -46,7 +46,7 @@
           <h3 class="form-label mt-3">
             <%= f.label :コメント%>
           </h3>
-          <%= f.text_field :text, class: "form-input", placeholder: "コメントを入力" %>
+          <%= f.text_area :text, class: "form-input", placeholder: "コメントを入力" %>
         </div>
         <div class="submit mb-5">
           <%= f.submit "送信", class: "btn btn-primary px-5 font-weight-bold" %>
@@ -60,7 +60,7 @@
             <ul class="comments-list">
               <li class="comment py-4">
                 <div class="comment-text mr-3">
-                  <%= comment.text %>
+                  <%= simple_format(comment.text) %>
                 </div>
                 <div class="comment-right">
                   <div class="comment-user">
