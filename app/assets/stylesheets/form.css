@@ -17,8 +17,10 @@
   
 }
 .forms {
-  max-width: 420px;
-  padding: 15px;
+  width: 700px;
+  padding: 40px 0px;
+  background-color: white;
+  border: 1px solid lightgrey;
 }
 
 .form-label {

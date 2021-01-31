@@ -16,19 +16,19 @@
   </div>
 </div>
 
-<div class="post-wrapper d-flex">
+<div class="wrapper d-flex">
   <%= render "groups/side_bar" %>
-  <div class="main pb-5 text-center">
+  <div class="main text-center">
     <div class ="group-name-bar py-1 d-flex">
       <h1 class="text-left ml-4 text-white font-weight-bold">
         <%= @group.name %>
       </h1>
     </div>
     <div class="group-members d-flex align-items-center pl-3 py-2">
-      <h5 class="member-head font-weight-bold">メンバー:</h5>
+      <h5 class="member-head font-weight-bold  text-white">メンバー:</h5>
       <div class="group-member d-flex">
         <% @group.users.each do |user| %>
-          <h5 class="mx-2"><%= user.name %></h5>
+          <h5 class="mx-2 text-white"><%= user.name %></h5>
         <% end %>
       </div>
     </div>
@@ -37,7 +37,7 @@
         <h2 class="posts-header-user w-25 font-weight-bold">投稿者</h2>
         <h2 class="posts-header-date w-25 font-weight-bold">投稿日</h2>
       </div>
-    <div class="card-deck">
+    <div class="card-deck mb-3">
       <div class="post-cards">
         <% @posts.each do |post| %>
           <div class="post-card shadow-sm">
