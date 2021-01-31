@@ -56,16 +56,16 @@ li {
   padding-left: 30px;
 }
 
-.post-card {
+.post-card, .posts-header{
   width: 100%;
 }
 
 .post-link {
   text-decoration: none !important;
-  color: black;
+  color: black !important;
 }
 
 .card-body {
   display: flex;
-  justify-content: space-between;
 }
+

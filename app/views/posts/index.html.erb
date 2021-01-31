@@ -5,33 +5,35 @@
     <div class ="group-name-bar">
       <h1 class="text-left ml-5"><%= @group.name %></h1>
     </div>
-      <%= link_to "新規投稿", new_group_post_path %>
-      <% @posts.each do |post| %>
-        <%= link_to post.title, group_post_path(post.group.id, post.id)%>
-      <% end %>
-      <%= link_to "Easy Board", root_path %>
       <div class = "group-edit">
         <%= link_to "グループを編集", edit_group_path(@group.id) %>
       </div>
 
         
-    <div class="card-deck mb-3 text-center">
+    <div class="card-deck">
+    
+      <div class="posts-header mb-4 shadow-sm d-flex text-left">
+        <h3 class="posts-header-title w-50">タイトル</h3>
+        <h3 class="posts-header-user w-25">投稿者</h3>
+        <h3 class="posts-header-date w-25">投稿日</h3>
+      </div>
+ 
       <% @posts.each do |post| %>
           <div class="post-card mb-4 shadow-sm">
         <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
-            <div class="card-header">
-              <h4 class="post-title my-0 font-weight-normal">
+            <div class="card-contents d-flex">
+              <h4 class="post-title my-2 font-weight-normal text-left w-50">
                 <%= post.title %>
               </h4>
+              <h4 class="post-user my-2 font-weight-normal text-left w-25">
+                <%= post.user.name %>
+              </h4>
+              <h4 class="post-date my-2 font-weight-normal text-left w-25">
+                <%= l post.created_at %>
+              </h4>
+              
             </div>
-            <div class="card-body">
-              <div class="post-content">
-                <%= post.content %>
-              </div>
-              <div class="my-auto px-2 text-right">
-                <%= image_tag post.image.variant(resize: '300x300') if post.image.attached? %>
-              </div>
-            </div>
+           
           </div>
         <% end %>
       <% end %>
