@@ -36,23 +36,25 @@
         <h2 class="posts-header-user w-25 font-weight-bold">投稿者</h2>
         <h2 class="posts-header-date w-25 font-weight-bold">投稿日</h2>
       </div>
-      <% @posts.each do |post| %>
-        <div class="post-card shadow-sm">
-          <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
-            <div class="card-contents d-flex py-2">
-              <h4 class="post-title my-2 pl-2 font-weight-normal text-left w-50">
-                <%= post.title %>
-              </h4>
-              <h4 class="post-user my-2 font-weight-normal text-left w-25">
-                <%= post.user.name %>
-              </h4>
-              <h4 class="post-date my-2 font-weight-normal text-left w-25">
-                <%= l post.created_at %>
-              </h4>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="post-cards">
+        <% @posts.each do |post| %>
+          <div class="post-card shadow-sm">
+            <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
+              <div class="card-contents d-flex py-2">
+                <h4 class="post-title my-2 pl-2 font-weight-normal text-left w-50">
+                  <%= post.title %>
+                </h4>
+                <h4 class="post-user my-2 font-weight-normal text-left w-25">
+                  <%= post.user.name %>
+                </h4>
+                <h4 class="post-date my-2 font-weight-normal text-left w-25">
+                  <%= l post.created_at %>
+                </h4>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
