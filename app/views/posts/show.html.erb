@@ -1,4 +1,20 @@
-<%= render "shared/header" %>
+<div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to "Easy Board", root_path, {class: "h1 text-body text-decoration-none"} %>
+  </div>
+  <div class="mr-md-3">こんにちは、
+    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
+  </div>
+  <div class="btn btn-primary">
+    <%= link_to "投稿を編集", edit_group_post_path(@group.id, @post.id), {class: "text-white text-decoration-none font-weight-bold"} %>
+  </div>
+  <div class="btn btn-outline-primary ml-3">
+    <%= link_to "投稿を削除", group_post_path(@group.id, @post.id), {method: :delete, class: "text-body text-decoration-none font-weight-bold"} %>
+  </div>
+  <div class="btn btn-outline-primary ml-3">
+    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
+  </div>
+</div>
 
   <div class="d-flex">
     <%= render "groups/side_bar" %>
