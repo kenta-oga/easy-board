@@ -16,7 +16,8 @@
 
 .post-box {
   width: 1000px;
-  background-color: lightyellow;
+  background-color: white;
+  border: 1px solid lightgrey;
 }
 
 .post-content {
