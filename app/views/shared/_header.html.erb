@@ -5,7 +5,7 @@
   <div class="mr-md-3">こんにちは、
     <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
   </div>
-  <% unless current_page?(new_group_path) %>
+  <% if current_page?(root_path) %>
     <div class="btn btn-primary">
       <%= link_to "グループ新規作成", new_group_path, {class: "text-white text-decoration-none font-weight-bold"} %>
     </div>

@@ -1,28 +1,46 @@
-<%= render "shared/header" %>
+<div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to "Easy Board", root_path, {class: "h1 text-body text-decoration-none"} %>
+  </div>
+  <div class="mr-md-3">こんにちは、
+    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
+  </div>
+  <div class="btn btn-primary">
+    <%= link_to "新規投稿", new_group_post_path, {class: "text-white text-decoration-none font-weight-bold"} %>
+  </div>
+  <div class="btn btn-primary ml-3">
+    <%= link_to "グループを編集", edit_group_path(@group.id), {class: "text-white text-decoration-none font-weight-bold"} %>
+  </div>
+  <div class="btn btn-outline-secondary ml-3">
+    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
+  </div>
+</div>
+
 <div class="post-wrapper">
   <%= render "groups/side_bar" %>
   <div class="post-main pb-5 text-center">
-    <div class ="group-name-bar">
-      <h1 class="text-left ml-5"><%= @group.name %></h1>
+    <div class ="group-name-bar py-1 mb-1">
+      <h1 class="text-left ml-4 text-white">
+        <%= @group.name %>
+      </h1>
     </div>
-      <div class = "group-edit">
-        <%= link_to "グループを編集", edit_group_path(@group.id) %>
-      </div>
-
-        
+    <div class="group-users d-flex mb-4 ml-5">
+      <h5 class="font-weight-bold">メンバー:</h5>
+      <% @group.users.each do |user| %>
+        <h5 class="mx-2"><%= user.name %></h5>
+      <% end %>
+    </div>
     <div class="card-deck">
-    
-      <div class="posts-header mb-4 shadow-sm d-flex text-left">
-        <h3 class="posts-header-title w-50">タイトル</h3>
-        <h3 class="posts-header-user w-25">投稿者</h3>
-        <h3 class="posts-header-date w-25">投稿日</h3>
+      <div class="posts-header shadow-sm d-flex text-left py-3">
+        <h2 class="posts-header-title w-50 font-weight-bold pl-2">タイトル</h2>
+        <h2 class="posts-header-user w-25 font-weight-bold">投稿者</h2>
+        <h2 class="posts-header-date w-25 font-weight-bold">投稿日</h2>
       </div>
- 
       <% @posts.each do |post| %>
-          <div class="post-card mb-4 shadow-sm">
-        <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
-            <div class="card-contents d-flex">
-              <h4 class="post-title my-2 font-weight-normal text-left w-50">
+        <div class="post-card shadow-sm">
+          <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
+            <div class="card-contents d-flex py-2">
+              <h4 class="post-title my-2 pl-2 font-weight-normal text-left w-50">
                 <%= post.title %>
               </h4>
               <h4 class="post-user my-2 font-weight-normal text-left w-25">
@@ -31,13 +49,10 @@
               <h4 class="post-date my-2 font-weight-normal text-left w-25">
                 <%= l post.created_at %>
               </h4>
-              
             </div>
-           
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-
   </div>
 </div>
