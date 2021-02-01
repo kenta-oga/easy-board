@@ -1,8 +1,20 @@
-<%= render "shared/header" %>
+<div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to image_tag("logo.png"), root_path %>
+  </div>
+  <div class="current-user mr-md-3">こんにちは、
+    <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
+  </div>
+  <div class="btn btn-danger">
+    <%= link_to "グループ削除", group_path, {class: "text-white text-decoration-none font-weight-bold"} %>
+  </div>
+  <div class="btn btn-outline-secondary ml-3">
+    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
+  </div>
+</div>
 <div class = "form-body pt-5">
   <div class="forms text-center m-auto">
     <h1 class = "font-weight-bold mb-5">グループ編集</h1>
     <%= render partial: "group", local: { group: @group } %>
-    <%= link_to '削除', group_path, method: :delete, class:'group-destroy' %>
   </div>
 </div>
