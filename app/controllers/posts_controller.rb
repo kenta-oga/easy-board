@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   end
 
   def read
+    binding.pry
     if @post.read 
       @post.update(read: false)
     else

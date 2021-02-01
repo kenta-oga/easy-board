@@ -37,8 +37,11 @@
       <div class="pb-5 px-2">
         <%= image_tag @post.image.variant(resize: "600x600") if @post.image.attached? %>
       </div>
+
       <div class="read-box mb-4 text-right">
-        <button type="button" class="btn btn-success">確認済</button>
+        <button type="button" class="btn btn-success" id="read" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %>>
+          確認済
+        </button>
       </div>
     </div>
     <div class="post-comments mt-2">
