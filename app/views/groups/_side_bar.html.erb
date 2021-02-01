@@ -6,7 +6,7 @@
         <div class="unread-count">
           <%= current_user.unread_count(group) %>
         </div>
-        <div class="">
+        <div class="group-name">
           <%= link_to group.name, group_posts_path(group), {class: "text-body"} %> 
         </div>
       </div>

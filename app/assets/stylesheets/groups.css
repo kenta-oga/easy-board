@@ -31,4 +31,11 @@
   font-size: 20px;
 }
 
+.unread-count {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  width: 22px;
+}
+
 /* side_bar */

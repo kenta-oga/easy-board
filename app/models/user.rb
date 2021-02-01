@@ -27,6 +27,10 @@ class User < ApplicationRecord
         posts_count += 1
       end
     end
+    if posts_count == 0
+      nil
+    else
       posts_count
+    end
   end
 end
