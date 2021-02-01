@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: "groups#index"
   resources :users, only: [:edit, :update]
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
-    resources :posts
-    get 'posts/:id', to: 'posts#checked' do
+    resources :posts do
       resources :comments, only: [:create, :destroy]
+    end
+    collection do
+      get 'posts/:id', to: 'posts#checked'
     end
   end
 
