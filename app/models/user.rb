@@ -19,4 +19,14 @@ class User < ApplicationRecord
   def already_readed?(post)
     self.reads.exists?(post_id: post.id)
   end
+
+  def unread_count(group)
+    posts_count = 0
+    group.posts.each do |post|
+      unless self.already_readed?(post)
+        posts_count += 1
+      end
+    end
+      posts_count
+  end
 end
