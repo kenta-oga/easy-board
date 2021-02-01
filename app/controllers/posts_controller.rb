@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :post_find, only: [:show, :edit, :update, :destroy]
+  before_action :post_find, only: [:show, :edit, :update, :destroy, :read]
   before_action :group_find, only: [:index, :new, :create, :show, :edit, :update]
   before_action :move_root, only: [:edit, :update, :destroy]
   def index
@@ -42,6 +42,17 @@ class PostsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def read
+    if @post.read 
+      @post.update(read: false)
+    else
+      @post.update(read: true)
+    end
+
+    item = Post.find(params[:id])
+    render json: { post: item }
   end
 
   private
