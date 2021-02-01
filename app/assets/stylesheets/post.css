@@ -24,6 +24,11 @@
   text-align: left;
 }
 
+.checked {
+  min-width: 90px;
+  font-weight: bold;
+}
+
 .comment-form {
   width: 800px;
   margin: auto;
@@ -60,6 +65,7 @@ li {
 }
 
 
+/* index.html.erb */
 .group-members {
   background-color: #4169E1;
 }
