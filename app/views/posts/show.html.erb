@@ -16,13 +16,13 @@
 <div class="wrapper d-flex">
   <%= render "groups/side_bar" %>
   <div class="main pb-3 text-center">
-    <div class ="group-name-bar py-1 mb-1">
+    <div class="group-name-bar py-1 mb-1">
       <h1 class="text-left ml-4 text-white font-weight-bold">
         <%= @post.group.name %>
       </h1>
     </div>
     <div class="post-box mx-auto mt-2 px-5">
-      <h2 class ="mt-5 pt-3 font-weight-bold">
+      <h2 class="mt-5 pt-3 font-weight-bold">
         <%= @post.title %>
       </h2>
       <div class="post-user text-right pr-2">
@@ -36,6 +36,9 @@
       </div>
       <div class="pb-5 px-2">
         <%= image_tag @post.image.variant(resize: "600x600") if @post.image.attached? %>
+      </div>
+      <div class="read-box mb-4 text-right">
+        <button type="button" class="btn btn-success">確認済</button>
       </div>
     </div>
     <div class="post-comments mt-2">
