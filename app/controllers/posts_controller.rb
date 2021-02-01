@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :group_find, only: [:index, :new, :create, :show, :edit, :update, :read]
   before_action :move_root, only: [:edit, :update, :destroy]
   def index
-    @posts = @group.posts.includes(:user)
+    @posts = @group.posts.includes(:user).order(id: "DESC")
   end
 
   def new
