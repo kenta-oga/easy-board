@@ -101,3 +101,7 @@ li {
   text-decoration: none !important;
   color: black !important;
 }
+
+div[data-read="true"] {
+  background: lightgrey;
+}

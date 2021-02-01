@@ -40,7 +40,7 @@
     <div class="card-deck mb-3">
       <div class="post-cards">
         <% @posts.each do |post| %>
-          <div class="post-card shadow-sm">
+          <div class="post-card" data-read=<%= current_user.already_readed?(post) %>>
             <%= link_to group_post_path(post.group.id, post.id), class: "post-link" do%>
               <div class="card-contents d-flex py-2">
                 <h4 class="post-title my-2 pl-2 font-weight-normal text-left w-50">
