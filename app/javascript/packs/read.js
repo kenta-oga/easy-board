@@ -1,5 +1,6 @@
 function read() {
   const read = document.getElementById("read");
+  console.log("Hello JavaScript")
   read.addEventListener("click", () => {
     const postId = read.getAttribute("data--post-id");
     // const userId = read.getAttribute("data-user-id");

@@ -14,4 +14,9 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :reads, dependent: :destroy
+  has_many :readed_posts, through: :reads, source: :post
+
+  def already_readed?(post)
+    self.reads.exists?(post_id: post.id)
+  end
 end

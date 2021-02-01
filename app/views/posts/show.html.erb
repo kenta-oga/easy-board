@@ -37,11 +37,14 @@
       <div class="pb-5 px-2">
         <%= image_tag @post.image.variant(resize: "600x600") if @post.image.attached? %>
       </div>
-
+      <div class="readed-members">
+      </div>
       <div class="read-box mb-4 text-right">
-        <button type="button" class="btn btn-success" id="read" data-post-id=<%= @post.id %> data-user-id=<%= current_user.id %>>
-          確認済
-        </button>
+        <% if current_user.already_readed?(@post) %>
+          <%= button_to '確認取り消し', group_post_read_path(@group.id, @post.id), {method: :delete, class: "btn btn-secondary px-5 font-weight-bold"} %>
+        <% else %>
+          <%= button_to '確認済', group_post_reads_path(@group.id, @post.id), class: "btn btn-success px-5 font-weight-bold" %>
+        <% end %>
       </div>
     </div>
     <div class="post-comments mt-2">

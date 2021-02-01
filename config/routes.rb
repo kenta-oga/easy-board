@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :posts do
       resources :comments, only: [:create, :destroy]
-    end
-    collection do
-      get 'posts/:id', to: 'posts#checked'
+      resources :reads, only: [:create, :destroy]
     end
   end
 
