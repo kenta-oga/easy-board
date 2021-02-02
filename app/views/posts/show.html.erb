@@ -45,7 +45,7 @@
           <%= button_to '確認済', group_post_reads_path(@group.id, @post.id), class: "btn btn-success px-5 font-weight-bold" %>
         <% end %>
       </div>
-      <div class="readed-members d-flex mb-2">
+      <div class="readed-members d-flex mb-2" id="read">
         <h5 class="checked">確認済:</h5>
         <div class="readed-lists d-flex flex-wrap">
           <% @post.readed_users.each do |user| %>
