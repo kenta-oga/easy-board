@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: easy_board_production
-  username: easy_board
-  password: <%= ENV['EASY_BOARD_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
