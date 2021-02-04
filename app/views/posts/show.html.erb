@@ -39,7 +39,6 @@
       <div class="pb-5 px-2">
         <%= image_tag @post.image.variant(resize: "600x600") if @post.image.attached? %>
       </div>
-      
       <div class="read-btn mb-4 text-right">
         <% if current_user.already_readed?(@post) %>
           <%= button_to '確認取り消し', group_post_read_path(@group.id, @post.id), {method: :delete, class: "btn btn-secondary px-5 font-weight-bold"} %>
@@ -55,7 +54,6 @@
           <% end %>
         </div>
       </div>
-      
     </div>
     <div class="post-comments mt-2">
       <div class="comment-form mb-2">

@@ -12,9 +12,9 @@
     <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
   </div>
 </div>
-<div class = "form-body pt-5">
+<div class="form-body pt-5">
   <div class="forms text-center m-auto">
-    <h1 class = "font-weight-bold mb-5">グループ編集</h1>
+    <h1 class="font-weight-bold mb-5">グループ編集</h1>
     <%= render partial: "group", local: { group: @group } %>
   </div>
 </div>

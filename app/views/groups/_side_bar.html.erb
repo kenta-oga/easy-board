@@ -1,8 +1,8 @@
 <div class="side-bar">
-  <div class = "groups-head text-body font-weight-bold">グループ一覧</div>
+  <div class="groups-head text-body font-weight-bold">グループ一覧</div>
   <div class="side-bar-menu pb-5">      
     <% current_user.groups.each do |group| %>
-      <div class = "group-list overflow-hidden d-flex py-3 pl-2">
+      <div class="group-list overflow-hidden d-flex py-3 pl-2">
         <div class="unread-count">
           <%= current_user.unread_count(group) %>
         </div>
