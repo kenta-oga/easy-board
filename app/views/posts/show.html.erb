@@ -5,11 +5,13 @@
   <div class="current-user mr-md-3">こんにちは、
     <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
   </div>
-  <div class="btn btn-primary">
-    <%= link_to "投稿を編集", edit_group_post_path(@group.id, @post.id), {class: "text-white text-decoration-none font-weight-bold"} %>
-  </div>
+  <% if current_user.id == @post.user_id %>
+    <div class="btn btn-primary">
+      <%= link_to "投稿を編集", edit_group_post_path(@group.id, @post.id), {class: "text-white text-decoration-none font-weight-bold"} %>
+    </div>
+  <% end %>
   <div class="btn btn-outline-primary ml-3">
-    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>
+    <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"} %>
   </div>
 </div>
 
