@@ -84,7 +84,7 @@
                     by <%= comment.user.name %>
                   </div>
                   <div class="comment-delete mr-3">
-                    <%= link_to "コメントを削除", group_post_comment_path(@group.id, @post.id, comment.id), method: :delete %>
+                    <%= link_to "コメントを削除", group_post_comment_path(@group.id, @post.id, comment.id), method: :delete if current_user.id == comment.user_id %>
                   </div>
                 </div>
               </li>
