@@ -3,12 +3,13 @@
 『あなたに必要な情報だけ届く、あなただけの掲示板』
 Easy boardは、パート・アルバイトの方も使いやすい、職場で使える掲示板アプリです！
 
-### URL 35.72.52.25
+### URL:  http://35.72.52.25/
 
 ### ローカルでの動作方法
 git clone https://github.com/kenta-oga/easy-board.git
 ### テストアカウント
-
+email: gest@user
+password: gest01
 
 # 目指した課題解決
 

@@ -8,6 +8,10 @@
   background-size: cover;
 }
 
+.top-messages {
+  padding-top: 100px;
+}
+
 .group-name-bar {
   background-color: #4169E1;
   width: 100%;
