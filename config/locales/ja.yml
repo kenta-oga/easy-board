@@ -1,4 +1,16 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+      group:
+        name: グループ名
+      post:
+        title: タイトル
+        content: 本文
+        image: 画像
+      comment:
+        text: コメント
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
