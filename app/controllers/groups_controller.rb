@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :group_find, only: [:edit, :update, :destroy]
+  
   def index
   end
 
@@ -10,7 +11,6 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-
     if @group.save
       redirect_to root_path
     else
