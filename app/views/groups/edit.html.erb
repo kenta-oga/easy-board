@@ -6,7 +6,7 @@
     <%= link_to current_user.name, edit_user_path(current_user), {class: "text-body font-weight-bold"} %>さん
   </div>
   <div class="btn btn-danger">
-    <%= link_to "グループ削除", group_path, {class: "text-white text-decoration-none font-weight-bold"} %>
+    <%= link_to "グループ削除", group_path, {method: :delete, class: "text-white text-decoration-none font-weight-bold"} %>
   </div>
   <div class="btn btn-outline-secondary ml-3">
     <%= link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "text-body text-decoration-none font-weight-bold"}%>

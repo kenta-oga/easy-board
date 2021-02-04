@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to root_path
+      redirect_to group_posts_path
     else
       render :index
     end
