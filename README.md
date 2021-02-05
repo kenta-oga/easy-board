@@ -6,7 +6,13 @@ Easy boardは、パート・アルバイトの方も使いやすい、職場で�
 ### URL:  http://35.72.52.25/
 
 ### ローカルでの動作方法
-git clone https://github.com/kenta-oga/easy-board.git
+% git clone https://github.com/kenta-oga/easy-board.git
+% cd easy-board
+% bundle install
+% yarn install
+% rails db:create
+% rails db:migrate
+
 ### テストアカウント
 email: gest@user
 password: gest01

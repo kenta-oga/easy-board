@@ -1,47 +1,50 @@
-<%= render "shared/second_header" %>
+<div class="header d-flex align-items-center py-3 px-4 bg-white border-bottom shadow-sm">
+  <div class="header-title my-0 mr-auto font-weight-bold">
+    <%= link_to image_tag("logo.png"), root_path %>
+  </div>
+</div>
+
 <div class = 'form-body pt-5 overflow-auto'>
   <div class='forms text-center m-auto'>
     <h1 class = 'font-weight-bold mb-5'>アカウント新規登録</h1>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
-        <%= devise_error_messages!%>
-        <div class='form'>
-          <h3 class='form-label'>
-            <%= f.label :ユーザー名%>
-          </h3>
-          <div>
-            <%= f.text_field :name, class: 'form-input', placeholder: 'ユーザー名を入力', autofocus: true%>
-          </div>
+    <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
+      <%= devise_error_messages!%>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :ユーザー名%>
+        </h3>
+        <div>
+          <%= f.text_field :name, class: 'form-input', placeholder: 'ユーザー名を入力', autofocus: true%>
         </div>
-        <div class='form'>
-          <h3 class='form-label'>
-            <%= f.label :メールアドレス%>
-          </h3>
-          <div>
-            <%= f.email_field :email, class: 'form-input', placeholder: 'メールアドレスを入力'%>
-          </div>
+      </div>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :メールアドレス%>
+        </h3>
+        <div>
+          <%= f.email_field :email, class: 'form-input', placeholder: 'メールアドレスを入力'%>
         </div>
-        <div class='form'>
-          <h3 class='form-label'>
-            <%= f.label :パスワード%>
-          </h3>
-          <div>
-            <%= f.password_field :password, class: 'form-input', placeholder: '英数字混合6文字以上', autocomplete: "off"%>
-          </div>
+      </div>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :パスワード%>
+        </h3>
+        <div>
+          <%= f.password_field :password, class: 'form-input', placeholder: '英数字混合6文字以上', autocomplete: "off"%>
         </div>
-        <div class='form'>
-        <div class='form'>
-          <h3 class='form-label'>
-            <%= f.label :確認用パスワード%>
-          </h3>
-          <div>
-            <%= f.password_field :password_confirmation, class: 'form-input', placeholder: '同じパスワードを入力', autocomplete: "off"%>
-          </div>
+      </div>
+      <div class='form'>
+      <div class='form'>
+        <h3 class='form-label'>
+          <%= f.label :確認用パスワード%>
+        </h3>
+        <div>
+          <%= f.password_field :password_confirmation, class: 'form-input', placeholder: '同じパスワードを入力', autocomplete: "off"%>
         </div>
-        <div class='submit pt-4'>
-          <%= f.submit "新規登録", class: 'btn btn-primary px-5 font-weight-bold'%>
-        </div>
-      <% end %>
-    </div>
+      </div>
+      <div class='submit pt-4'>
+        <%= f.submit "新規登録", class: 'btn btn-primary px-5 font-weight-bold'%>
+      </div>
+    <% end %>
   </div>
 </div>
