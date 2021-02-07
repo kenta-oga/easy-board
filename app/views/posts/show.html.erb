@@ -57,7 +57,7 @@
     </div>
     <div class="post-comments mt-2">
       <div class="comment-form mb-2">
-        <%= form_with(model: [@group, @post, @comment], local: true) do |f| %>
+        <%= form_with(model: [@group, @post, @comment], local: false) do |f| %>
           <%= render "shared/error_messages", model: f.object %>
         <div class="form">
           <h3 class="form-label mt-3">
@@ -73,14 +73,14 @@
       <% if @comments %>
         <div class="comments-box mb-5 p-3">
           <h3 class="mb-5">コメント一覧</h3>
-          <% @comments.each do |comment| %>
+          <% @comments.reverse_each do |comment| %>
             <ul class="comments-list">
-              <li class="comment py-4">
-                <div class="comment-text mr-3">
+              <li class="comment">
+                <div class="comment-text mr-3" id="comments">
                   <%= simple_format(comment.text) %>
                 </div>
                 <div class="comment-right">
-                  <div class="comment-user">
+                  <div class="comment-user" id="name">
                     by <%= comment.user.name %>
                   </div>
                   <div class="comment-delete mr-3">
@@ -95,3 +95,4 @@
     </div>
   </div>
 </div>
+

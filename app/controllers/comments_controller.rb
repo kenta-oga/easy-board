@@ -4,9 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_show
-    else
-      render_show
+      ActionCable.server.broadcast 'comment_channel', {content: @comment, user: @comment.user.name}
     end
   end
 
