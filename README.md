@@ -30,7 +30,7 @@ password: gest01
 - Ruby on Rails 6.0.0<br>
 
 ### 【データベース】
-・MySQL2 0.4.4<br>
+- MySQL2 0.4.4<br>
 
 ### 【本番環境】
 - AWS(S3/EC2)<br>
@@ -41,7 +41,7 @@ password: gest01
 - RSpec<br>
 - Rubocop<br>
 - Capistrano<br>
-- Bootstrap</br>
+- Bootstrap
 
 # 目指した課題解決
 
@@ -107,12 +107,20 @@ password: gest01
 - ユーザー登録
 - ログイン
 - ユーザー編集
-![image](https://user-images.githubusercontent.com/75552959/107177206-9f557480-6a14-11eb-94ff-c2b06bcd9111.png)
+
+【ユーザー新規登録画面】
+![38ec44769b59022459bcbd1eb59ffa70](https://user-images.githubusercontent.com/75552959/107181693-bac57d00-6a1e-11eb-87d1-452c10703f39.gif)
+
 
 ### グループ機能
 - グループ新規作成
 - グループ情報編集
 - グループ一覧表示(ログインユーザーの所属グループのみ)
+
+
+【グループ新規作成画面】
+![7fe4b55ee2fa7aaa3b2338ff6952ed1a](https://user-images.githubusercontent.com/75552959/107184674-5f968900-6a24-11eb-8988-6818dd6520fc.gif)
+
 
 ### 情報投稿機能
 - 投稿新規登録、編集、削除
@@ -120,15 +128,32 @@ password: gest01
 - 投稿一覧表示
 - 投稿詳細表示
 
+【新規投稿画面】
+![d07443d7e1880214320a88b0735e1794](https://user-images.githubusercontent.com/75552959/107184865-b00de680-6a24-11eb-9ddc-99697095e28c.gif)
+
+【投稿詳細画面】
+![a27f0b45ec2eaf2822c1d24c83d183c9](https://user-images.githubusercontent.com/75552959/107185023-011dda80-6a25-11eb-9d77-c2bfb2b057f3.gif)
+
+
 ### コメント機能
 - 投稿に対するコメントが可能
 - 削除可能
+
+【コメント機能】
+![コメント機能](https://user-images.githubusercontent.com/75552959/107185285-87d2b780-6a25-11eb-95fc-b347d2c0331c.gif)
 
 ### 既読確認機能
 - 投稿詳細ページに既読確認ボタン
 - 確認ボタンを押すと確認済み一覧にユーザー名表示
 - 確認済みの投稿は投稿一覧画面で色が変わる
 - グループごとの未読の投稿数がグループ一覧に表示
+
+【既読確認機能】
+![227d39af3db19603ad13b5adbe2d8c8c](https://user-images.githubusercontent.com/75552959/107185522-fa439780-6a25-11eb-82b5-864c4f2c5489.gif)
+
+【未読数の表示・既読済み投稿の背景色変更】
+<img width="1438" alt="easy board未読数" src="https://user-images.githubusercontent.com/75552959/107223783-f2054f80-6a59-11eb-979a-87c426d3edf5.png">
+
 
 
 
