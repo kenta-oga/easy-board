@@ -74,13 +74,13 @@
         <div class="comments-box mb-5 p-3">
           <h3 class="mb-5">コメント一覧</h3>
           <% @comments.reverse_each do |comment| %>
-            <ul class="comments-list">
+            <ul class="comments-list" id="comments">
               <li class="comment">
-                <div class="comment-text mr-3" id="comments">
+                <div class="comment-text mr-3">
                   <%= simple_format(comment.text) %>
                 </div>
                 <div class="comment-right">
-                  <div class="comment-user" id="name">
+                  <div class="comment-user">
                     by <%= comment.user.name %>
                   </div>
                   <div class="comment-delete mr-3">

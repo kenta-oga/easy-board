@@ -11,21 +11,19 @@ consumer.subscriptions.create("CommentChannel", {
 
   received(data) {
     const html = `
-    <ul class="comments-list">
       <li class="comment">
-        <div class="comment-text mr-3" id="comments">
-          <p>${data.content.text}</p>
+        <div class="comment-text mr-3">
+          <pre>${data.content.text}</pre>
         </div>
         <div class="comment-right">
-          <div class="comment-user" id="name">
+          <div class="comment-user">
             <p>by ${data.user}</p>
           </div>
-          <div class="comment-delete">
+          <div class="comment-delete mr-3">
             <a rel="nofollow" data-method="delete" href="/groups/group_id: params[:group_id]/posts/post_id: params[:post_id]/comments/${data.content.id}">コメントを削除</a>
           </div>
         </div>
       </li>
-    </ul>
                 `;
     const comments = document.getElementById('comments');
     const newComment = document.getElementById('comment_text');
