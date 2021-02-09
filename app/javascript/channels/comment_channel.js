@@ -31,15 +31,3 @@ consumer.subscriptions.create("CommentChannel", {
     newComment.value='';
   }
 });
-
-
-/* <h3>mini_talk_app</h3>
-<%= form_with model: @message do |f| %>
-  <%= f.text_field :text %>
-  <%= f.submit '送信' %>
-<% end %>
-<div id='messages'>
-  <% @messages.reverse_each do |message| %>
-    <p><%= message.text %></p>
-  <% end %>
-</div> */
