@@ -3,11 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_show
-    else
-      render_show
-    end
+    ActionCable.server.broadcast 'comment_channel', { content: @comment, user: @comment.user.name } if @comment.save
   end
 
   def destroy

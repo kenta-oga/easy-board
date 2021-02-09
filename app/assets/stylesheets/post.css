@@ -57,6 +57,7 @@ li {
 
 .comment {
   border-bottom: 1px solid #8EB8FF;
+  padding: 30px 0px;
 }
 /* show.html.erb */
 
