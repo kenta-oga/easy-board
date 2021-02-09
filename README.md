@@ -137,10 +137,11 @@ password: gest01
 
 ### コメント機能
 - 投稿に対するコメントが可能
-- 削除可能
+- 投稿者のみ削除可能
+- Action Cableで非同期通信化
 
 【コメント機能】
-![コメント機能](https://user-images.githubusercontent.com/75552959/107185285-87d2b780-6a25-11eb-95fc-b347d2c0331c.gif)
+![cd1cbdc291aa9f50894f534d9e9f0992](https://user-images.githubusercontent.com/75552959/107319482-42c08b00-6ae2-11eb-86b9-05c8876882a9.gif)
 
 ### 既読確認機能
 - 投稿詳細ページに既読確認ボタン
