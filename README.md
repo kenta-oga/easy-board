@@ -14,7 +14,7 @@ Easy Boardは、パート・アルバイトの方も使いやすい、職場で�
 % rails db:migrate
 
 ### テストアカウント
-email: gest@user
+email: gest@user  
 password: gest01
 
 # 使用技術・環境
