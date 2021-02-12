@@ -16,9 +16,17 @@
 
 
 /* index.html.erb */
+.top-messages {
+  padding-top: 5px;
+}
+
 .top-message {
   text-align: center;
   color: #4169E1;
+}
+
+.board-image {
+  width: 85%;
 }
 /* index.html.erb */
 
