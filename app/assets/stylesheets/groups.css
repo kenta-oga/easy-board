@@ -39,10 +39,20 @@
 
 .introduction-text {
   font-weight: bold;
+}
+
+.image-group {
+ width: 200px;
+}
+
+.image-mail {
+  width: 180px;
   
 }
-.image {
 
+.image-check {
+  width: 170px;
+  margin-top: 10px;
 }
 /* index.html.erb */
 
