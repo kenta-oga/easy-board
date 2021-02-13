@@ -2,12 +2,23 @@
 <div class="wrapper d-flex">
   <%= render "side_bar" %>
   <div class="main">
-    <div class="top-messages">
-      <h1 class="top-message font-weight-bold pb-1">ようこそ、Easy Boardへ</h1>
+    <div class="top-messages mt-5">
+      <h1 class="top-message font-weight-bold pb-5">ようこそ、Easy Boardへ</h1>
       <h3 class="top-message my-1">あなたに必要な情報だけ届く、あなただけの掲示板</h3>
     </div>
-    <div class="top-image text-center">
-      <%= image_tag "board.png", class:"board-image" %>
+    <div class="introductions">
+      <div class="introduction">
+        <h4 class="introduction-text">チーム・役割ごとに</br>グループを作成しよう</h4>
+        <%= image_tag "group_image.png", class:"image" %>
+      </div>
+      <div class="introduction">
+        <h4 class="introduction-text">届くのはあなたの</br>グループの情報だけ</h4>
+        <%= image_tag "mail_image.png", class:"image" %>
+      </div>
+      <div class="introduction">
+        <h4 class="introduction-text">読んだら「確認済み」ボタンを</br>押して既読を伝えよう</h4>
+        <%= image_tag "check_image.png", class:"image" %>
+      </div>
     </div>
   </div>
 </div>
